@@ -13,12 +13,13 @@ app.use(express.json())
 app.use(cors())
 
 
+app.get('/' , (req, res)=>{
+    res.send('Hello World')
+})
 //routes
 readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + route)))
 
-// app.get('/' , (req, res)=>{
-//     res.send('Hello World')
-// })
+
 
 const server = () => {
 
